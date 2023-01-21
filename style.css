@@ -1,0 +1,96 @@
+*{
+    padding : 0;
+    margin: 0;
+}
+
+html, body  #fullheight{
+    min-height: 100% !important;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  black;
+
+}
+.container{
+    height: 100%;
+    background-color: black;
+}
+
+.result{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: wheat;
+    height: 39%;
+
+}
+.result span{
+    margin-right: 20px;
+    font-size: 110px;
+    justify-self: flex-end;
+}
+.buttons{
+    width: 100%;
+    height: 60%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  
+}
+
+.item{
+    display: flex;
+    justify-self:center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    border-radius: 100%;
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+}
+
+.percent{
+    background-color: #a5a5a5;
+    border: none;
+    color:black;
+}
+
+.item1{
+   background-color: #a5a5a5;
+    border: nome;
+}
+
+.item3 {
+    background-color: #ff9f0a;
+    border: nome;
+}
+
+.numbers, .comma {
+    background-color: #343434 ;
+    border: nome;
+}
+
+.negative, .clear {
+    color: black;
+}
+
+.itemZerro{
+    background-color: #343434 ;
+    width: 185px;
+    border-radius:105px; 
+    grid-column: span 2;
+    border: nome;
+}
+
+.selectedSing{
+    background-color: white;
+    color:#ff9f0a;
+
+}
+
+.changedStyles{
+    font-size: 10px;
+}
