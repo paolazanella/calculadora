@@ -6,6 +6,7 @@ const clear = document.querySelector('.clear');
 const negative = document.querySelector('.negative');
 const percent = document.querySelector('.percent');
 
+
 let firstValue = "";
 let isFirstValue = false;
 let secondValue = "";
@@ -16,8 +17,11 @@ let resultValue = 0;
 for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener('click', (e) => {
         let atr = e.target.getAttribute('value');
-        if (isFirstValue == false) {
+        if (isFirstValue === false) {
             getFirstValue(atr)
+        }
+        if(isSecondValue === false){
+            getSecondValue(atr);
         }
     })
 }
@@ -30,10 +34,10 @@ function getFirstValue(el) {
 }
 
 function getSecondValue(el) {
-    if  (isFirstValue != "" && sign != "") {
+    if  (FirstValue != "" && sign != "") {
         secondValue += el;
         result.innerHTML = secondValue;
-        isSecondValue = +isSecondValue;
+        secondValue = +secondValue;
     }
 }
 
@@ -49,22 +53,24 @@ getSign();
 
 equals.addEventListener('click', (e)=>{
     result.innerHTML = "";
-    if(sign == "+"){
-        resultValue =firstValue+secondValue;
-    }else if(sing == "-"){
-        resultValue =firstValue-secondValue;
-    }else if(sing == "x"){
-        resultValue =firstValue*secondValue;
-    }else if(sing == "/"){
-        resultValue =firstValue/secondValue;
+    if(sign === "+"){
+        resultValue = firstValue + secondValue;
+    }else if(sing === "-"){
+        resultValue = firstValue - secondValue;
+    }else if(sing === "x"){
+        resultValue = firstValue * secondValue;
+    }else if(sing === "/"){
+        resultValue = firstValue / secondValue;
     }
     result.innerHTML = resultValue;
     firstValue = resultValue;
-    secondValue ="";
+    secondValue = "";
+
+    checkResultlength();
 }) 
 
 function checkResultlength(){
-    resultValue= JSON.stringify.stringify(resultValue);
+    resultValue = JSON.stringify.stringify(resultValue);
 
     if(resultValue.length >= 8 ){
         resultValue = JSON.parse(resultValue);
@@ -93,8 +99,18 @@ percent.addEventListener('click',()=>{
         firstValue=resultValue;
     }
     if(firstValue!=""&& secondValue!=""&& sing!=""){
-        resultValue = -resultValue/100;
+        resultValue = resultValue/100;
     }
     result.innerHTML = resultValue;
     
+})
+
+clear.addEventListener('click',() =>{
+    result.innerHTML = 0;
+    firstValue = "";
+    isFirstValue = false;
+    secondValue = "";
+    isSecondValue = false;
+    sign = "";
+    resultValue = 0;
 })
