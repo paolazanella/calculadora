@@ -33,13 +33,13 @@ html, body  {
 }
 
 .item{
-    justify-self:center;
+    justify-self: center;
     align-items: center;
     font-size: 50px;
     color: white;
     border-radius: 100%;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
     cursor: pointer;
     align-self: center;
