@@ -1,6 +1,6 @@
 const numbers = document.querySelectorAll('.numbers');
 const result = document.querySelector('.result span');
-const  signs = document.querySelectorAll('.sing');
+const  sings = document.querySelectorAll('.sing');
 const  equals= document.querySelector('.equals');
 const clear = document.querySelector('.clear');
 const negative = document.querySelector('.negative');
@@ -20,7 +20,7 @@ for (let i = 0; i < numbers.length; i++) {
         if (isFirstValue === false) {
             getFirstValue(atr)
         }
-        if(isSecondValue === false){
+        if(isSecondValue == false){
             getSecondValue(atr);
         }
     })
@@ -34,7 +34,7 @@ function getFirstValue(el) {
 }
 
 function getSecondValue(el) {
-    if  (FirstValue != "" && sign != "") {
+    if  (firstValue != "" && sing != "") {
         secondValue += el;
         result.innerHTML = secondValue;
         secondValue = +secondValue;
@@ -42,8 +42,8 @@ function getSecondValue(el) {
 }
 
 function getSign() {
-    for(let i = 0; i < sign.length; i++) {
-        sign[i].addEventListener('click', (e)=>{
+    for(let i = 0; i < sings.length; i++) {
+        sings[i].addEventListener('click', (e)=>{
             sing = e.target.getAttribute('value');
             isFirstValue = true;
         })
@@ -55,11 +55,11 @@ equals.addEventListener('click', (e)=>{
     result.innerHTML = "";
     if(sign === "+"){
         resultValue = firstValue + secondValue;
-    }else if(sing === "-"){
+    }else if(sings === "-"){
         resultValue = firstValue - secondValue;
-    }else if(sing === "x"){
+    }else if(sings === "x"){
         resultValue = firstValue * secondValue;
-    }else if(sing === "/"){
+    }else if(sings === "/"){
         resultValue = firstValue / secondValue;
     }
     result.innerHTML = resultValue;
@@ -70,7 +70,7 @@ equals.addEventListener('click', (e)=>{
 }) 
 
 function checkResultlength(){
-    resultValue = JSON.stringify.stringify(resultValue);
+    resultValue = JSON.stringify(resultValue);
 
     if(resultValue.length >= 8 ){
         resultValue = JSON.parse(resultValue);
@@ -85,7 +85,7 @@ negative.addEventListener('click',()=>{
         resultValue = -firstValue;
         firstValue=resultValue;
     }
-    if(firstValue!=""&& secondValue!=""&& sing!=""){
+    if(firstValue!=""&& secondValue!=""&& sings!=""){
         resultValue = -resultValue;
     }
     result.innerHTML = resultValue;
@@ -98,7 +98,7 @@ percent.addEventListener('click',()=>{
         resultValue = firstValue/100;
         firstValue=resultValue;
     }
-    if(firstValue!=""&& secondValue!=""&& sing!=""){
+    if(firstValue!=""&& secondValue!=""&& sings!=""){
         resultValue = resultValue/100;
     }
     result.innerHTML = resultValue;
