@@ -11,7 +11,7 @@ let firstValue = "";
 let isFirstValue = false;
 let secondValue = "";
 let isSecondValue = false;
-let sign = "";
+let sing = "";
 let resultValue = 0;
 
 for (let i = 0; i < numbers.length; i++) {
@@ -53,13 +53,13 @@ getSign();
 
 equals.addEventListener('click', (e)=>{
     result.innerHTML = "";
-    if(sign === "+"){
+    if(sing === "+"){
         resultValue = firstValue + secondValue;
-    }else if(sings === "-"){
+    }else if(sing === "-"){
         resultValue = firstValue - secondValue;
-    }else if(sings === "x"){
+    }else if(sing === "x"){
         resultValue = firstValue * secondValue;
-    }else if(sings === "/"){
+    }else if(sing === "/"){
         resultValue = firstValue / secondValue;
     }
     result.innerHTML = resultValue;
@@ -111,6 +111,6 @@ clear.addEventListener('click',() =>{
     isFirstValue = false;
     secondValue = "";
     isSecondValue = false;
-    sign = "";
+    sing = "";
     resultValue = 0;
 })
